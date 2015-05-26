@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 12.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/CodeGenLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Génération de code/Journal de transformation de texte">
+  <MessageClass Name="Message" Label="Message" Option="Afficher les messages d'information" />
+  <MessageClass Name="Warning" Label="Avertissement" Option="Afficher les avertissements" />
+  <MessageClass Name="Error" Label="Erreur" Option="Afficher les erreurs" />
+  <MessageClass Name="Property" Label="Propriété" Option="Afficher les métadonnées" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Afficher les messages de diagnostic" />
+  <Message Timestamp="2015-05-21T14:34:05" Importance="High" Text="Génération du code ou transformation du texte démarrées." />
+  <Message Timestamp="2015-05-21T14:34:05" Importance="Diagnostic" Text="Nom = ClassTemplate" />
+  <Message Timestamp="2015-05-21T14:34:05" Importance="Diagnostic" Text="Remplacer = True" />
+  <Message Timestamp="2015-05-21T14:34:05" Importance="Diagnostic" Text="ProjectPath = ..\Projet_TrollsLib\Projet_TrollsLib.csproj" />
+  <Message Timestamp="2015-05-21T14:34:05" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2015-05-21T14:34:05" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2015-05-21T14:34:05" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2015-05-21T14:34:05" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4" />
+  <Message Timestamp="2015-05-21T14:34:05" Importance="Medium" Text="La liaison de modèle de texte 'ClassTemplate' de Projet_Trolls appliquera ClassTemplate.t4 à 'Projet_Trolls::ProfiTrolls::Personnage' -  (Class), 'Projet_Trolls::ProfiTrolls::G_Personnage' -  (Class), 'Projet_Trolls::ProfiTrolls::Facade' -  (Class), 'Projet_Trolls::ProfiTrolls::G_Armes' -  (Class), 'Projet_Trolls::ProfiTrolls::Troll' -  (Class), 'Projet_Trolls::ProfiTrolls::Chasseur' -  (Class), 'Projet_Trolls::ProfiTrolls::Arme' -  (Class) " />
+  <Message Timestamp="2015-05-21T14:34:06" Importance="Medium" Text="'Projet_Trolls::ProfiTrolls::Personnage' -  (Class) : réussite (fichier remplacé) - E:\Documents\IUT\modules\A22\Projet_Trolls\Projet_TrollsLib\GeneratedCode\ProfiTrolls\Personnage.cs" />
+  <Message Timestamp="2015-05-21T14:34:06" Importance="Medium" Text="'Projet_Trolls::ProfiTrolls::G_Personnage' -  (Class) : réussite (fichier remplacé) - E:\Documents\IUT\modules\A22\Projet_Trolls\Projet_TrollsLib\GeneratedCode\ProfiTrolls\G_Personnage.cs" />
+  <Message Timestamp="2015-05-21T14:34:06" Importance="Medium" Text="'Projet_Trolls::ProfiTrolls::Facade' -  (Class) : réussite (fichier remplacé) - E:\Documents\IUT\modules\A22\Projet_Trolls\Projet_TrollsLib\GeneratedCode\ProfiTrolls\Facade.cs" />
+  <Message Timestamp="2015-05-21T14:34:06" Importance="Medium" Text="'Projet_Trolls::ProfiTrolls::G_Armes' -  (Class) : réussite (fichier remplacé) - E:\Documents\IUT\modules\A22\Projet_Trolls\Projet_TrollsLib\GeneratedCode\ProfiTrolls\G_Armes.cs" />
+  <Message Timestamp="2015-05-21T14:34:06" Importance="Medium" Text="'Projet_Trolls::ProfiTrolls::Troll' -  (Class) : réussite (fichier remplacé) - E:\Documents\IUT\modules\A22\Projet_Trolls\Projet_TrollsLib\GeneratedCode\ProfiTrolls\Troll.cs" />
+  <Message Timestamp="2015-05-21T14:34:06" Importance="Medium" Text="'Projet_Trolls::ProfiTrolls::Chasseur' -  (Class) : réussite (fichier remplacé) - E:\Documents\IUT\modules\A22\Projet_Trolls\Projet_TrollsLib\GeneratedCode\ProfiTrolls\Chasseur.cs" />
+  <Message Timestamp="2015-05-21T14:34:06" Importance="Medium" Text="'Projet_Trolls::ProfiTrolls::Arme' -  (Class) : réussite (fichier remplacé) - E:\Documents\IUT\modules\A22\Projet_Trolls\Projet_TrollsLib\GeneratedCode\ProfiTrolls\Arme.cs" />
+  <Message Timestamp="2015-05-21T14:34:06" Importance="Diagnostic" Text="Nom = StructTemplate" />
+  <Message Timestamp="2015-05-21T14:34:06" Importance="Diagnostic" Text="Remplacer = True" />
+  <Message Timestamp="2015-05-21T14:34:06" Importance="Diagnostic" Text="ProjectPath = ..\Projet_TrollsLib\Projet_TrollsLib.csproj" />
+  <Message Timestamp="2015-05-21T14:34:06" Importance="Diagnostic" Text="TargetDirectory = GeneratedCode\{PackageStructure}" />
+  <Message Timestamp="2015-05-21T14:34:06" Importance="Diagnostic" Text="TargetName = {Name}" />
+  <Message Timestamp="2015-05-21T14:34:06" Importance="Diagnostic" Text="TemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2015-05-21T14:34:06" Importance="Diagnostic" Text="ResolvedTemplateFilePath = C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+  <Message Timestamp="2015-05-21T14:34:06" Importance="Medium" Text="La liaison de modèle de texte 'StructTemplate' de Projet_Trolls appliquera StructTemplate.t4 à 'Projet_Trolls::ProfiTrolls::Personnage' -  (Class), 'Projet_Trolls::ProfiTrolls::G_Personnage' -  (Class), 'Projet_Trolls::ProfiTrolls::Facade' -  (Class), 'Projet_Trolls::ProfiTrolls::G_Armes' -  (Class), 'Projet_Trolls::ProfiTrolls::Troll' -  (Class), 'Projet_Trolls::ProfiTrolls::Chasseur' -  (Class), 'Projet_Trolls::ProfiTrolls::Arme' -  (Class) " />
+  <Message Timestamp="2015-05-21T14:34:06" Importance="Diagnostic" Text="'Projet_Trolls::ProfiTrolls::Personnage' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
+  <Message Timestamp="2015-05-21T14:34:07" Importance="Diagnostic" Text="'Projet_Trolls::ProfiTrolls::G_Personnage' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
+  <Message Timestamp="2015-05-21T14:34:07" Importance="Diagnostic" Text="'Projet_Trolls::ProfiTrolls::Facade' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
+  <Message Timestamp="2015-05-21T14:34:07" Importance="Diagnostic" Text="'Projet_Trolls::ProfiTrolls::G_Armes' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
+  <Message Timestamp="2015-05-21T14:34:07" Importance="Diagnostic" Text="'Projet_Trolls::ProfiTrolls::Troll' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
+  <Message Timestamp="2015-05-21T14:34:07" Importance="Diagnostic" Text="'Projet_Trolls::ProfiTrolls::Chasseur' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
+  <Message Timestamp="2015-05-21T14:34:07" Importance="Diagnostic" Text="'Projet_Trolls::ProfiTrolls::Arme' -  (Class) : aucun fichier n'a été généré, car la méthode 'AppliesToElement' du modèle 'StructTemplate.t4' a été évaluée comme false." />
+  <Message Timestamp="2015-05-21T14:34:07" Importance="Diagnostic" Text="La sélection comprenait 1 éléments qui n'étaient pas liés à un modèle." />
+  <Message Timestamp="2015-05-21T14:34:07" Importance="Diagnostic" Text="'Projet_Trolls::ProfiTrolls' -  (Package) : aucun modèle lié." />
+  <Message Timestamp="2015-05-21T14:34:07" Importance="High" Text="Génération du code terminée. Erreurs : 0. Avertissements : 0." />
+</Log>

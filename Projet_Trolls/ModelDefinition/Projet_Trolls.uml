@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<modelStoreModel xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm4="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm5="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="170b2a56-c234-4ae0-99fe-66f45d5f3907"
+  name="Projet_Trolls" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <appliedStereotypesInternal>
+    <stereotypeInstance
+      Id="2b7dcd13-632a-4899-b70a-903709269802"
+      name="namespace"
+      profile="CSharpProfile">
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="9b39de7f-6b0f-4139-bbad-d0f77c259b44">
+          <propertyInstance
+            Id="57c35fcc-a07a-4dc8-bd3a-bb13c326d677"
+            name="BaseName" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="ca03f82f-d790-4285-a74e-1483d4d28a48">
+          <propertyInstance
+            Id="a9b955e7-e1c3-44c9-a309-78dc1845c23d"
+            name="ClrAttributes" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="9072cab3-c2ff-4b95-adc9-03135fc9266f">
+          <propertyInstance
+            Id="5ae488f4-9cc5-433e-bd8b-7d66ddf74e3f"
+            name="Usings" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+    <stereotypeInstance
+      Id="d0245393-8ba9-4ece-99f4-10d6b0992476"
+      name="TextTemplateBindings"
+      profile="TextTemplateBindings">
+      <propertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="b658ca85-d64f-4818-a157-f20c35ef8740">
+          <propertyInstance
+            Id="2c1d68ab-55ea-43c9-a124-72f1aad19c37"
+            name="Alias"
+            value="ClassTemplate|EnumTemplate|InterfaceTemplate|StructTemplate" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="0b8f1640-3a65-49e5-ada7-b6113c4ef1d7">
+          <propertyInstance
+            Id="5baf9d0f-2ff6-4a81-a9cf-3e087bec9b61"
+            name="TemplateFilePath"
+            value="ClassTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\ClassTemplate.t4|EnumTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\EnumTemplate.t4|InterfaceTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\InterfaceTemplate.t4|StructTemplate=C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO 12.0\COMMON7\IDE\EXTENSIONS\MICROSOFT\ARCHITECTURE TOOLS\EXTENSIBILITY\Templates\Text\StructTemplate.t4" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="4496ad59-0012-4a55-9d8f-e821cb9d8a1a">
+          <propertyInstance
+            Id="e1ed80c4-7667-4173-a6e0-676b53c31609"
+            name="ProjectPath"
+            value="ClassTemplate=..\Projet_TrollsLib\Projet_TrollsLib.csproj|EnumTemplate=..\Projet_TrollsLib\Projet_TrollsLib.csproj|InterfaceTemplate=..\Projet_TrollsLib\Projet_TrollsLib.csproj|StructTemplate=..\Projet_TrollsLib\Projet_TrollsLib.csproj" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="49ab64a6-cc5c-4083-824b-eef0bd692b28">
+          <propertyInstance
+            Id="a7b5f70e-a074-4aa3-a8fd-40e594310d0d"
+            name="TargetDirectory"
+            value="ClassTemplate=GeneratedCode\{PackageStructure}|EnumTemplate=GeneratedCode\{PackageStructure}|InterfaceTemplate=GeneratedCode\{PackageStructure}|StructTemplate=GeneratedCode\{PackageStructure}" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="e91f06d0-e3ef-4624-82c3-153390577ccd">
+          <propertyInstance
+            Id="fa49997b-c740-483b-94a6-50edade28c12"
+            name="TargetName"
+            value="ClassTemplate={Name}|EnumTemplate={Name}|InterfaceTemplate={Name}|StructTemplate={Name}" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="f6ebcb83-5207-4a7c-99ce-ac7486e86552">
+          <propertyInstance
+            Id="faca8726-a347-4949-bba4-690f1a69fc10"
+            name="Overwrite"
+            value="ClassTemplate=True|EnumTemplate=True|InterfaceTemplate=True|StructTemplate=True" />
+        </stereotypeInstanceHasPropertyInstances>
+        <stereotypeInstanceHasPropertyInstances
+          Id="ff228235-3bc3-4378-98a6-5387d8fe420a">
+          <propertyInstance
+            Id="8a8feaeb-f36c-4159-a440-5a0858fa8db7"
+            name="Parameters" />
+        </stereotypeInstanceHasPropertyInstances>
+      </propertyInstances>
+    </stereotypeInstance>
+  </appliedStereotypesInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="0caec977-1f8c-4ba3-a7db-8cc9ad9cc73b">
+      <profileInstance
+        Id="e34d544e-0fea-4ed6-ac5e-1b74119ac791"
+        name="StandardProfileL2" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="29349502-908c-4fda-9054-c48619c59ed0">
+      <profileInstance
+        Id="532ea607-fb19-44b8-8502-3351b05452be"
+        name="StandardProfileL3" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="9273d02e-8d1e-4db7-a349-cc13758ecf13">
+      <profileInstance
+        Id="6a31bb6f-ef32-4d47-8ad4-5803e317629a"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+    <packageHasProfileInstances
+      Id="1b319a8c-32ab-427b-b52b-518ecd0f3400">
+      <profileInstance
+        Id="7351bb40-85f3-4d5d-b7c4-547cf51db9fd"
+        name="TextTemplateBindings" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="9a7283cb-cdbc-47e4-8376-f5c16ce8bf6c"
+        LastKnownName="ProfiTrolls"
+        LastKnownLocation="Package_1113.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="423911a6-4f8d-4c3f-b27c-f07440575405"
+        LastKnownName="ProfiTrolls"
+        LastKnownLocation="Package_1650.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="b51e9c92-9bc9-4d9f-9ae5-937722eae257"
+        name="Projet_Trolls::Package1::Personnage" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="5a9e6323-279b-4414-93ce-013dabfc2b81"
+        name="G_Armes"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <ownedOperationsInternal>
+          <operation
+            Id="5fb3d4b1-b0bf-4cb7-b632-c15cf3a0a51f"
+            name="ListerTtesArmes"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="5b939203-189e-4203-af35-ca9dd9d4934f"
+                  direction="Return"
+                  isUnique="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="07d8e2f1-9ca0-437b-892a-b6e0568b2a6c"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="2abc63f7-20b5-4ea3-b6c5-4aa742fdbcf5"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="ce81b622-6253-4766-af86-31a1c16e5a2f"
+                      LastKnownName="Projet_Trolls::wwwwwww::Arme"
+                      LastKnownLocation="Projet_Trolls.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="ce81b622-6253-4766-af86-31a1c16e5a2f"
+        name="Projet_Trolls::wwwwwww::Arme" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="73061be1-b136-424f-ae76-85f4c1c74d73"
+        name="Projet_Trolls::Package1::Arme" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="b2bda9f3-845b-432c-871f-3cf62ddaa41b"
+        name="Projet_Trolls::Package1::Troll" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <undefinedType
+        Id="1e0eeac6-0e8b-47c0-8fc4-463828230869"
+        name="Projet_Trolls::Package1::Chasseur" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="e260a634-93a1-4671-b436-8ab43ea57f62"
+        LastKnownName="ProfiTrolls"
+        LastKnownLocation="Package_0911.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+  <primitiveType
+    Id="220a3521-e091-4221-bae9-3ef9018e845c"
+    name="Integer"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="8943dc84-709e-4f62-b15a-a3273aa6f165"
+    name="Boolean"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+    name="String"
+    isAbstract="false"
+    isLeaf="false" />
+  <primitiveType
+    Id="3ab42e7d-4969-445a-b209-471f5cb8209c"
+    name="UnlimitedNatural"
+    isAbstract="false"
+    isLeaf="false" />
+</modelStoreModel>
