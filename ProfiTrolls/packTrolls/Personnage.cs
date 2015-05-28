@@ -36,7 +36,7 @@ namespace packTrolls
 
 		public virtual string PresentationCourte()
 		{
-			throw new System.NotImplementedException();
+            return String.Format("{0,-4}{1,-4}", this.id, this.nom);
 		}
 
 		public virtual string PresentationDetail()
@@ -48,32 +48,34 @@ namespace packTrolls
 
 		public virtual int GetId()
 		{
-			throw new System.NotImplementedException();
+            return this.id;
 		}
 
 		public virtual string GetName()
 		{
-			throw new System.NotImplementedException();
+            return this.nom;
 		}
 
 		public abstract int GetForce();
 
 		public virtual int GetVie()
 		{
-			throw new System.NotImplementedException();
+            return this.vie;
 		}
 
 		public Personnage(string nom, int vie)
 		{
             this.nom = nom;
             this.vie = vie;
+            this.id = nextId;
+            nextId++;
 		}
 
 		public abstract void SetTypePers();
 
 		public virtual void RecevoirCoup(Personnage agresseur, int force)
 		{
-			throw new System.NotImplementedException();
+            this.mesEnnemis.Add(agresseur);
 		}
 	}
 }
