@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F088123C-0E9E-452A-89E6-6BA2F21D5CAC}") = "Projet_Trolls", "Projet_Trolls\Projet_Trolls.modelproj", "{579ED35B-067B-4D7E-9629-E2EB130961F7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projet_TrollsLib", "Projet_TrollsLib\Projet_TrollsLib.csproj", "{20DA0ED4-26CE-4D1A-B539-3CBB20E41444}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfiTrolls", "ConsoleApplication1\ProfiTrolls.csproj", "{29EDEFE2-687C-4569-9D3A-D13791397F20}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfiTrollsTests", "ProfiTrollsTests\ProfiTrollsTests.csproj", "{5257571F-DE49-4C98-B413-CCAAACCF314D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProfiTrolls", "ProfiTrolls\ProfiTrolls.csproj", "{29EDEFE2-687C-4569-9D3A-D13791397F20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,14 +25,14 @@ Global
 		{20DA0ED4-26CE-4D1A-B539-3CBB20E41444}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20DA0ED4-26CE-4D1A-B539-3CBB20E41444}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20DA0ED4-26CE-4D1A-B539-3CBB20E41444}.Release|Any CPU.Build.0 = Release|Any CPU
-		{29EDEFE2-687C-4569-9D3A-D13791397F20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{29EDEFE2-687C-4569-9D3A-D13791397F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{29EDEFE2-687C-4569-9D3A-D13791397F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{29EDEFE2-687C-4569-9D3A-D13791397F20}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5257571F-DE49-4C98-B413-CCAAACCF314D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5257571F-DE49-4C98-B413-CCAAACCF314D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5257571F-DE49-4C98-B413-CCAAACCF314D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5257571F-DE49-4C98-B413-CCAAACCF314D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29EDEFE2-687C-4569-9D3A-D13791397F20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29EDEFE2-687C-4569-9D3A-D13791397F20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29EDEFE2-687C-4569-9D3A-D13791397F20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29EDEFE2-687C-4569-9D3A-D13791397F20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
