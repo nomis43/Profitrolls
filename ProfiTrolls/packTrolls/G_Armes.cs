@@ -13,20 +13,19 @@ namespace packTrolls
 
 	public class G_Armes
 	{
-		public virtual IEnumerable<Arme> ListeArmes
-		{
-			get;
-			set;
-		}
+        public static List<Arme> ListeArmes;
+        
 
 		public static Arme CreerUneArme(int id, string nom, int puissance)
 		{
-			throw new System.NotImplementedException();
+            Arme nouvelleArme = new Arme(id, nom, puissance);
+            G_Armes.ListeArmes.Add(nouvelleArme);
+            return nouvelleArme;
 		}
 
-		public static IEnumerable<Arme> ListerTtesArmes()
+		public static List<Arme> ListerTtesArmes()
 		{
-			throw new System.NotImplementedException();
+            return G_Armes.ListeArmes;
 		}
 
 	}

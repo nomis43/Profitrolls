@@ -21,21 +21,25 @@ namespace packTrolls
 
 		public Arme(int id, string nom, int puissance)
 		{
+            this.id = id;
+            this.nom = nom;
+            this.puissance = puissance;
+
 		}
 
 		public virtual string GetNom()
 		{
-			throw new System.NotImplementedException();
+            return this.nom;
 		}
 
 		public virtual int GetPuissance()
 		{
-			throw new System.NotImplementedException();
+            return this.puissance;
 		}
 
 		public virtual int GetId()
 		{
-			throw new System.NotImplementedException();
+            return this.id;
 		}
 
 	}

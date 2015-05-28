@@ -28,46 +28,54 @@ namespace packTrolls
 
 		public override string PresentationCourte()
 		{
-			throw new System.NotImplementedException();
+            string pres = base.PresentationCourte();
+            pres += string.Format("{2,-10}{3,-6}{4,-6}{5,-16}{6,-8}", Chasseur.c_type, this.GetForce(), this.GetVie(), this.fonction, this.mesArmes.Count);
+            return pres;
 		}
 
 		public override string PresentationDetail()
 		{
-			throw new System.NotImplementedException();
+            string pres = base.PresentationDetail();
+            pres += string.Format("{2,-10}{3,-6}{4,-6}{5,-16}{6,-8}", Chasseur.c_type, this.GetForce(), this.GetVie(), this.fonction, this.mesArmes.Count);
+            return pres;
 		}
 
 		public virtual void ListerMesArmes()
 		{
-			throw new System.NotImplementedException();
+			foreach (Arme a in this.mesArmes)
+            {
+                Console.Write(a.GetNom() + "  ");
+            }
 		}
 
 		public static string c_GetTypePers()
 		{
-			throw new System.NotImplementedException();
+            return Chasseur.c_type;
 		}
 
-		public Chasseur(string nom, string fonction)
+		public Chasseur(string nom, string fonction) : base(nom,Personnage.c_vieNaissance)
 		{
+            this.fonction = fonction;
 		}
 
 		public override int GetForce()
 		{
-			throw new System.NotImplementedException();
+            return Chasseur.c_force;
 		}
 
-		public static void c_SetTypePers()
+		public static void c_SetTypePers(string type)
 		{
-			throw new System.NotImplementedException();
+            Chasseur.c_type = type;
 		}
 
 		public virtual string GetFonction()
 		{
-			throw new System.NotImplementedException();
+            return this.fonction;
 		}
 
-		public static void c_SetForce()
+		public static void c_SetForce(int force)
 		{
-			throw new System.NotImplementedException();
+            Chasseur.c_force = force;
 		}
 
 	}

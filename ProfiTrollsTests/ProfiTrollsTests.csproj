@@ -53,12 +53,6 @@
     <Compile Include="packTrolls\TrollTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ConsoleApplication1\ProfiTrolls.csproj">
-      <Project>{29EDEFE2-687C-4569-9D3A-D13791397F20}</Project>
-      <Name>ProfiTrolls</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
