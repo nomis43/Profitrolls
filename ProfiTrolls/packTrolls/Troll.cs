@@ -26,41 +26,43 @@ namespace packTrolls
 
 		public override string PresentationDetail()
 		{
-			throw new System.NotImplementedException();
+            return String.Format(base.PresentationCourte() + "{2,-10}{3,-6}{4,-6}{5,-16}", this.GetTypePers(), this.GetForce(), this.GetVie(), this.taille);
 		}
 
 		public override void RecevoirArme(Arme a)
 		{
-			throw new System.NotImplementedException();
+            Console.WriteLine("Un Troll ne peut pas recevoir d'arme !");
 		}
 
 		public virtual void ListerMesArmes()
 		{
-			throw new System.NotImplementedException();
+            Console.WriteLine("Un Troll n'a pas d'armes !");
 		}
 
 		public static string c_GetTypePers()
 		{
-			throw new System.NotImplementedException();
+            return c_type;
 		}
 
-		public Troll(string nom, int taille, int force) : base(nom, Personnage.c_vieNaissance)
+		public Troll(string nom, int taille, int force, int id) : base(nom, Personnage.c_vieNaissance, id)
 		{
+            this.force = force;
 		}
 
 		public override int GetForce()
 		{
-			throw new System.NotImplementedException();
+            return this.force;
+           
 		}
 
-		public static void c_SetTypePers()
+		public static void c_SetTypePers(string type)
 		{
-			throw new System.NotImplementedException();
+            c_type = type;
 		}
 
 		public virtual int GetTaille()
 		{
-			throw new System.NotImplementedException();
+            return this.taille;
 		}
 
 	}

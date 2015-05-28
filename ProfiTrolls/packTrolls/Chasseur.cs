@@ -53,7 +53,7 @@ namespace packTrolls
             return Chasseur.c_type;
 		}
 
-		public Chasseur(string nom, string fonction) : base(nom,Personnage.c_vieNaissance)
+		public Chasseur(string nom, string fonction, int id) : base(nom,Personnage.c_vieNaissance, id)
 		{
             this.fonction = fonction;
 		}

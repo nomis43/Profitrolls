@@ -33,12 +33,15 @@ namespace packTrolls
         return a;
     }
 	public static void DonnerUneArme (int ida, int idp){
-        G_Personnage.GetPersonnage(idp).RecevoirArme(G_Armes.listeArmes[ida]);
+        G_Personnage.GetPersonnage(idp).RecevoirArme(G_Armes.ListeArmes[ida]);
     } //id de l'arme, id du personnage
 	public static void Frapper (int idpAgresseur, int idpVictime) {
         G_Personnage.GetPersonnage(idpAgresseur).Frapper(G_Personnage.GetPersonnage(idpVictime));
     }
-	public static void SupprimerPers (int idp){}
+	public static void SupprimerPers (int idp)
+    {
+
+    }
 	//informations affichables
 	public static IEnumerable<string> AfficherArmesDisponibles(){} //toutes les armes créées
 	public static string AfficherPersonnageDC(int idp){} 
@@ -52,8 +55,9 @@ namespace packTrolls
 	public static Personnage GetPersonnage (int idp){
         return G_Personnage.GetPersonnage(idp);
     } // personnage d'identifiant idp
-	public static IEnumerable<Arme> ListerTtesArmes() {
-    
+	public static IEnumerable<Arme> ListerTtesArmes() 
+    {
+        return G_Armes.ListerTtesArmes();
     } // toutes les armes disponibles
 	public static Arme GetArme(int ida){} //arme d'identifiant ida
 	public static IEnumerable<Arme> GetArmes(int idp){} //liste des armes du personnage d'identifiant idp

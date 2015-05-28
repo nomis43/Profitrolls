@@ -13,7 +13,7 @@ namespace packTrolls
 
 	public abstract class Personnage
 	{
-		private static int nextId = 0;
+		
 
 		private string nom;
 
@@ -63,12 +63,12 @@ namespace packTrolls
             return this.vie;
 		}
 
-		public Personnage(string nom, int vie)
+		public Personnage(string nom, int vie, int id)
 		{
             this.nom = nom;
             this.vie = vie;
-            this.id = nextId;
-            nextId++;
+            this.id = id;
+            
 		}
 
 		public abstract void SetTypePers();

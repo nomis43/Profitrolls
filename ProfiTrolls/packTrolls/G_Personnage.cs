@@ -15,35 +15,55 @@ namespace packTrolls
 	{
 		private static int nextId = 0;
 
-		public virtual IEnumerable<Personnage> ListePersonnages
-		{
-			get;
-			set;
-		}
-
+        private static List<Personnage> ListePersonnages;
+		
 		public static Personnage GetPersonnage(int id)
 		{
-			throw new System.NotImplementedException();
+			foreach (Personnage pers in G_Personnage.ListePersonnages)
+            {
+                if (pers.GetId()==id)
+                {
+                    return pers;
+                }
+            }
+            throw new ArgumentOutOfRangeException("le personnage n'existe pas");
 		}
 
 		public static IEnumerable<Personnage> ListerTsPersonnages()
 		{
-			throw new System.NotImplementedException();
+            return ListePersonnages;
 		}
 
 		public static void SupprimerPers(int id)
 		{
-			throw new System.NotImplementedException();
+			foreach(Personnage pers in ListePersonnages)
+            {
+                if(pers.GetId()==id)
+                {
+                    ListePersonnages.Remove(pers);
+                    break;
+                }
+            }
+            throw new ArgumentOutOfRangeException("le personnage n'existe pas");
 		}
 
 		public static Troll AjouterTroll(string nom, int taille, int force)
 		{
-			throw new System.NotImplementedException();
+            Troll troll = new Troll(nom, taille, force, nextId);
+            ListePersonnages.Add(troll);
+            nextId++;
+
+            return troll;
+                      
 		}
 
 		public static Chasseur AjouterChasseur(string nom, string fonction)
 		{
-			throw new System.NotImplementedException();
+            Chasseur chasseur = new Chasseur(nom, fonction, nextId);
+            ListePersonnages.Add(chasseur);
+            nextId++;
+
+            return chasseur;
 		}
 
 	}

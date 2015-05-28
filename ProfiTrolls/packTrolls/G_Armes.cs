@@ -13,19 +13,25 @@ namespace packTrolls
 
 	public class G_Armes
 	{
-        public static List<Arme> ListeArmes;
+        public static IDictionary<int, Arme> ListeArmes;
         
 
 		public static Arme CreerUneArme(int id, string nom, int puissance)
 		{
             Arme nouvelleArme = new Arme(id, nom, puissance);
-            G_Armes.ListeArmes.Add(nouvelleArme);
+            G_Armes.ListeArmes.Add(id,nouvelleArme);
             return nouvelleArme;
 		}
 
 		public static List<Arme> ListerTtesArmes()
 		{
-            return G_Armes.ListeArmes;
+            List<Arme> liste = new List<Arme>();
+
+            foreach(KeyValuePair<int,Arme> a in G_Armes.ListeArmes)
+            {
+                liste.Add(a.Value);
+            }
+            return liste ;
 		}
 
 	}
