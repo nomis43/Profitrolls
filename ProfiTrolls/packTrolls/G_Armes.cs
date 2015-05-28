@@ -23,7 +23,19 @@ namespace packTrolls
             return nouvelleArme;
 		}
 
-		public static List<Arme> ListerTtesArmes()
+        public static Arme GetArme(int id)
+        {
+            foreach (Arme a in ListeArmes)
+            {
+                if (a.GetId() == id)
+                {
+                    return a;
+                }
+            }
+            throw new IndexOutOfRangeException("L'arme n'existe pas!");
+        }
+
+		public static IEnumerable<Arme> ListerTtesArmes()
 		{
             return G_Armes.ListeArmes;
 		}

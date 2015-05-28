@@ -2019,74 +2019,6 @@
         </targetEnds>
         <ownedAttributesInternal>
           <property
-            Id="0bedf25f-0e31-4a75-817f-8a7fbcc775f2"
-            name="nextId"
-            visibility="Private"
-            isLeaf="false"
-            isStatic="true"
-            isReadOnly="false"
-            isUnique="false"
-            isDerived="false"
-            isDerivedUnion="false"
-            aggregation="None"
-            isComposite="false">
-            <appliedStereotypesInternal>
-              <stereotypeInstance
-                Id="e122f159-6749-4d5e-9741-3ab0ee217cb1"
-                name="field"
-                profile="CSharpProfile">
-                <propertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="954fbcea-04bc-44e6-a729-9db8b9c1c029">
-                    <propertyInstance
-                      Id="7b07b395-ab0a-4d7a-a98f-7da94dfa6dd8"
-                      name="ClrAttributes" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="1b44446d-7adc-42e6-9154-a670f1984877">
-                    <propertyInstance
-                      Id="9a363a2a-7535-4d74-9624-e482d2f08519"
-                      name="IsConst"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="d38ab24a-d3cc-4bd5-980d-cfc68d02d169">
-                    <propertyInstance
-                      Id="2ca1f6ac-8067-4ebd-afce-8d87118faf45"
-                      name="IsNullable"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="e1ced103-bd83-4348-bd66-5de5f33e2db1">
-                    <propertyInstance
-                      Id="1116a9a4-2ec5-44b0-916b-6fcfdd1e0ca6"
-                      name="IsVolatile"
-                      value="false" />
-                  </stereotypeInstanceHasPropertyInstances>
-                  <stereotypeInstanceHasPropertyInstances
-                    Id="e8f31b82-f0dc-468e-9a25-b8bc49eadb3a">
-                    <propertyInstance
-                      Id="c8efe2a8-71cd-427e-a5f5-2a085cf97813"
-                      name="PackageVisibility"
-                      value="internal" />
-                  </stereotypeInstanceHasPropertyInstances>
-                </propertyInstances>
-              </stereotypeInstance>
-            </appliedStereotypesInternal>
-            <type_NamedElement>
-              <undefinedTypeMoniker
-                Id="0829be9f-e4d9-44eb-aa64-904822ce1fc6"
-                LastKnownName="int"
-                LastKnownLocation="Package_1113.uml" />
-            </type_NamedElement>
-            <defaultValue>
-              <literalString
-                Id="6bf062af-5b6e-4c38-bf44-9b13dc925d56"
-                name="DefaultValue"
-                value="0" />
-            </defaultValue>
-          </property>
-          <property
             Id="270b6825-b47a-4787-9949-68acf90d57c6"
             name="nom"
             visibility="Private"
@@ -3457,6 +3389,72 @@
                   <upperValueInternal>
                     <literalString
                       Id="65af8f5e-017f-461e-bb92-3810c68610c2"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+            </relationshipOwnedElementsInternal>
+          </association>
+          <association
+            Id="486f6a2a-7884-4c7c-a181-9c6fbe4e5e35"
+            isDerived="false"
+            sourceEndRoleName="mesArmes"
+            targetEndRoleName="propriétaires"
+            isLeaf="false"
+            isAbstract="false">
+            <classMoniker
+              Id="4796c60d-a2f2-4146-9329-93aedc16c89b"
+              LastKnownName="Mage"
+              LastKnownLocation="Package_0911.uml" />
+            <description>Possède</description>
+            <relationshipOwnedElementsInternal>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="066f90f7-a8ba-4101-9ad2-a92a3b8d47e0"
+                  name="mesArmes"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="5b4f9101-0c8d-4dc7-8369-ee3de0536fad"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="e4bc30b1-2460-4acb-8b6a-2cb753affbeb"
+                      name="Upper"
+                      value="*" />
+                  </upperValueInternal>
+                </memberEnd>
+              </associationHasOwnedEnds>
+              <associationHasOwnedEnds>
+                <memberEnd
+                  Id="f6d72f32-1e97-4a7d-99a6-0411d32d4af8"
+                  name="propriétaires"
+                  isLeaf="false"
+                  isStatic="false"
+                  isReadOnly="false"
+                  isDerived="false"
+                  isDerivedUnion="false"
+                  aggregation="None"
+                  isComposite="false"
+                  isNavigableOwned="false">
+                  <lowerValueInternal>
+                    <literalString
+                      Id="04e246a4-9cd7-4084-b80c-db5d75b02ec2"
+                      name="Lower"
+                      value="*" />
+                  </lowerValueInternal>
+                  <upperValueInternal>
+                    <literalString
+                      Id="c0e323a3-a7b6-4a05-819b-8867ee4d6d20"
                       name="Upper"
                       value="*" />
                   </upperValueInternal>
@@ -6649,7 +6647,7 @@
             name="c_type"
             visibility="Private"
             isLeaf="false"
-            isStatic="false"
+            isStatic="true"
             isReadOnly="false"
             isUnique="false"
             isDerived="false"
@@ -6967,6 +6965,81 @@
                 </propertyInstances>
               </stereotypeInstance>
             </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="1fa59330-f0c8-44b6-9eaa-ec442dc63194"
+            name="RecevoirArme"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="3ad8e246-2ee2-402e-be1d-f8415dcea5b0"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fcbb010c-7bbf-4943-8072-43a7319ca7ed">
+                    <propertyInstance
+                      Id="df4a124d-af02-4379-b5b9-4bcaa5093051"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ae03d025-9a43-4557-9dca-037e2c9b25a2">
+                    <propertyInstance
+                      Id="e5543222-d819-4e44-af12-2fab90ebe6d4"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ee8bfde1-a555-4c9a-8cb2-7054099513a4">
+                    <propertyInstance
+                      Id="a2c85d46-cdfd-45e7-8da1-a178ecb4ce1b"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8b8e42d1-e75b-4160-b714-77c7da55618a">
+                    <propertyInstance
+                      Id="bcd17f38-92bf-4fcc-9d87-5a2a14de61c6"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9e00cc1a-0893-47f2-81ee-6c00238b2b83">
+                    <propertyInstance
+                      Id="88b9f084-a107-4a84-872e-ce02472a4139"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="7d10ee92-b21b-4baf-b8fe-7814b7b4366d">
+                    <propertyInstance
+                      Id="0b1b7089-dcf9-4fa1-819e-d66a88e829f7"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="bf447636-c78a-4e13-9605-88fd7404999d"
+                  name="a"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="14f8c5cc-1dd2-4bb5-8cf8-c9d3c1d1fa7e"
+                      LastKnownName="Arme"
+                      LastKnownLocation="Package_1113.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
           </operation>
         </ownedOperationsInternal>
       </class>

@@ -83,7 +83,7 @@ namespace packTrolls
     } // toutes les armes disponibles
 	public static Arme GetArme(int ida){
         return G_Armes.GetArme(ida);
-    } //arme d'identifiant ida
+    } //arme d'identifiant idaa
 	public static IEnumerable<Arme> GetArmes(int idp){
         return G_Personnage.GetPersonnage(idp).ListerMesArmes();
     } //liste des armes du personnage d'identifiant idp
