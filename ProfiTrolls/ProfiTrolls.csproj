@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Facade.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="packTrolls\Arme.cs" />
     <Compile Include="packTrolls\Chasseur.cs" />

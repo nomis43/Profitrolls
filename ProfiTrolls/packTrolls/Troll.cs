@@ -19,9 +19,9 @@ namespace packTrolls
 
 		private int force;
 
-		public override string PresentationCourte()
+		public override string PresentationCourte() 
 		{
-			throw new System.NotImplementedException();
+            return String.Format(base.PresentationCourte() + "{2,-10}{3,-6}{4,-6}{5,-16}", this.GetTypePers(), this.GetForce(), this.GetVie(), this.taille);
 		}
 
 		public override string PresentationDetail()

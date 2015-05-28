@@ -10,7 +10,7 @@ namespace ProfiTrolls
     {
         public static void Main()
         {
-
+            G_
         }
     }
 }

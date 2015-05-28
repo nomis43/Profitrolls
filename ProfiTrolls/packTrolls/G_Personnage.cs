@@ -36,12 +36,12 @@ namespace packTrolls
 			throw new System.NotImplementedException();
 		}
 
-		public static Projet_Trolls::Package1::Troll AjouterTroll(string nom, int taille, int force)
+		public static Troll AjouterTroll(string nom, int taille, int force)
 		{
 			throw new System.NotImplementedException();
 		}
 
-		public static Projet_Trolls::Package1::Chasseur AjouterChasseur(string nom, string fonction)
+		public static Chasseur AjouterChasseur(string nom, string fonction)
 		{
 			throw new System.NotImplementedException();
 		}
