@@ -13,39 +13,41 @@ namespace packTrolls
 
 	public class Troll : Personnage
 	{
+		private static string c_type = "Troll";
+
 		private int taille;
-
-		private static string c_type;
-
 		private int force;
 
-		public override string PresentationCourte() 
-		{
-            return String.Format(base.PresentationCourte() + "{2,-10}{3,-6}{4,-6}{5,-16}", this.GetTypePers(), this.GetForce(), this.GetVie(), this.taille);
-		}
+        public override string PresentationCourte()
+        {
+            return String.Format(base.PresentationCourte() + "{0,-10}{1,-6}{2,-6}{3,-16}", this.GetTypePers(), this.GetForce(), this.GetVie(), this.taille);
+        }
 
 		public override string PresentationDetail()
 		{
-            return String.Format(base.PresentationCourte() + "{2,-10}{3,-6}{4,-6}{5,-16}", this.GetTypePers(), this.GetForce(), this.GetVie(), this.taille);
+            //return this.PresentationCourte() + "ennemis : " + this.GetEnnemis();
+            return base.PresentationDetail();
 		}
 
 		public override void RecevoirArme(Arme a)
 		{
-            Console.WriteLine("Un Troll ne peut pas recevoir d'arme !");
+            Console.WriteLine("Un Troll ne peut pas d'arme !");
 		}
 
-		public virtual void ListerMesArmes()
+		public override IEnumerable<Arme> GetListeArmes()
 		{
             Console.WriteLine("Un Troll n'a pas d'armes !");
+            return null;
 		}
 
-		public static string c_GetTypePers()
+		public override string GetTypePers()
 		{
             return c_type;
 		}
 
 		public Troll(string nom, int taille, int force, int id) : base(nom, Personnage.c_vieNaissance, id)
 		{
+            this.taille = taille;
             this.force = force;
 		}
 
@@ -55,9 +57,14 @@ namespace packTrolls
            
 		}
 
-		public static void c_SetTypePers(string type)
+        public override string ListerMesArmes()
+        {
+            return "";
+        }
+
+		public override void SetTypePers(string type)
 		{
-            c_type = type;
+            Troll.c_type = type;
 		}
 
 		public virtual int GetTaille()

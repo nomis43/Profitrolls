@@ -13,9 +13,9 @@ namespace packTrolls
 
 	public class G_Personnage
 	{
-		private static int nextId = 0;
+		private static int nextId = 1;
 
-        private static List<Personnage> ListePersonnages;
+        private static List<Personnage> ListePersonnages = new List<Personnage>();
 		
 		public static Personnage GetPersonnage(int id)
 		{

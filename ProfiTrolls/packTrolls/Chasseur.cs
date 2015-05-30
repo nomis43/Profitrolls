@@ -13,57 +13,75 @@ namespace packTrolls
 
 	public class Chasseur : Personnage
 	{
-		private static string c_type;
+		private static string c_type = "Chasseur";
 
 		private string fonction;
 
 		private static int c_force = 20;
 
-        private List<Arme> mesArmes;
+        private List<Arme> mesArmes = new List<Arme>();
 
 		public override void RecevoirArme(Arme a)
 		{
-            mesArmes.Add(a);
+            bool existe = false;
+            foreach (Arme arme in mesArmes)
+            {
+                if(Object.ReferenceEquals(arme, a))
+                {
+                    existe = true;
+                }
+            }
+            if (!existe)
+            {
+                this.mesArmes.Add(a);
+            }
 		}
 
 		public override string PresentationCourte()
 		{
-            string pres = base.PresentationCourte();
-            pres += string.Format("{2,-10}{3,-6}{4,-6}{5,-16}{6,-8}", Chasseur.c_type, this.GetForce(), this.GetVie(), this.fonction, this.mesArmes.Count);
-            return pres;
+            return string.Format(base.PresentationCourte() + "{0,-10}{1,-6}{2,-6}{3,-16}{4,-8}", Chasseur.c_type, this.GetForce(), this.GetVie(), this.fonction, this.mesArmes.Count);
 		}
 
 		public override string PresentationDetail()
 		{
-            string pres = base.PresentationDetail();
-            pres += string.Format("{2,-10}{3,-6}{4,-6}{5,-16}{6,-8}", Chasseur.c_type, this.GetForce(), this.GetVie(), this.fonction, this.mesArmes.Count);
-            return pres;
+            return base.PresentationDetail() + " ; armes : " + this.ListerMesArmes();
 		}
 
-		public virtual void ListerMesArmes()
+		public override IEnumerable<Arme> GetListeArmes()
 		{
-			foreach (Arme a in this.mesArmes)
-            {
-                Console.Write(a.GetNom() + "  ");
-            }
+            return new List<Arme> (this.mesArmes);
 		}
 
-		public static string c_GetTypePers()
+        public override string ListerMesArmes() {
+            string armes = "";
+            foreach (Arme a in mesArmes)
+            {
+                armes += a.GetNom() + " ,";
+            }
+            return armes;
+        }
+
+		public override string GetTypePers()
 		{
             return Chasseur.c_type;
 		}
 
-		public Chasseur(string nom, string fonction, int id) : base(nom,Personnage.c_vieNaissance, id)
+		public Chasseur(string nom, string fonction, int id) : base(nom, Personnage.c_vieNaissance, id)
 		{
             this.fonction = fonction;
 		}
 
 		public override int GetForce()
 		{
-            return Chasseur.c_force;
+            int forceTot = c_force;
+            foreach (Arme a in mesArmes)
+            {
+                forceTot += a.GetPuissance();
+            }
+            return forceTot;
 		}
 
-		public static void c_SetTypePers(string type)
+		public override void SetTypePers(string type)
 		{
             Chasseur.c_type = type;
 		}

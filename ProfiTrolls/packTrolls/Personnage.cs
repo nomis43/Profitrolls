@@ -13,8 +13,6 @@ namespace packTrolls
 
 	public abstract class Personnage
 	{
-		
-
 		private string nom;
 
 		private int vie = 200;
@@ -29,7 +27,8 @@ namespace packTrolls
 
 		public virtual void Frapper(Personnage victime)
 		{
-			throw new System.NotImplementedException();
+            victime.RecevoirCoup(this, this.GetForce());
+            this.mesEnnemis.Add(victime);
 		}
 
 		public abstract string GetTypePers();
@@ -41,10 +40,10 @@ namespace packTrolls
 
 		public virtual string PresentationDetail()
 		{
-			throw new System.NotImplementedException();
+            return this.PresentationCourte() + "\n ennemis : " + this.GetEnnemis();
 		}
 
-		public abstract IEnumerable<Arme> ListerMesArmes();
+		public abstract IEnumerable<Arme> GetListeArmes();
 
 		public virtual int GetId()
 		{
@@ -58,6 +57,8 @@ namespace packTrolls
 
 		public abstract int GetForce();
 
+        public abstract string ListerMesArmes();
+
 		public virtual int GetVie()
 		{
             return this.vie;
@@ -69,14 +70,26 @@ namespace packTrolls
             this.vie = vie;
             this.id = id;
             
+            this.mesEnnemis = new List<Personnage>();
 		}
 
-		public abstract void SetTypePers();
+		public abstract void SetTypePers(string type);
 
 		public virtual void RecevoirCoup(Personnage agresseur, int force)
 		{
             this.mesEnnemis.Add(agresseur);
+            this.vie -= force;
 		}
+
+        public string GetEnnemis()
+        {
+            string ennemis = "";
+            foreach(Personnage p in mesEnnemis)
+            {
+                ennemis += p.nom + " ";
+            }
+            return ennemis;
+        }
 	}
 }
 

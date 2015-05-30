@@ -19,25 +19,51 @@ namespace packTrolls
 	{
     //actions
 	public static void InitialiserJeuVide(){}
-	public static void CreerJeuDEssai(){} //décrit dans l'énoncé
+
+	public static void CreerJeuDEssai(){
+
+        Arme epee = G_Armes.CreerUneArme(1, "Epée", 20);
+        Arme marteau = G_Armes.CreerUneArme(2, "marteau", 10);
+        Arme stylo = G_Armes.CreerUneArme(4, "stylo", 2);
+
+        Personnage T1 = G_Personnage.AjouterTroll("T1", 280, 20);
+        Personnage T2 = G_Personnage.AjouterTroll("T2", 220, 40);
+        Personnage T3 = G_Personnage.AjouterTroll("T3", 315, 60);
+
+        Personnage C1 = G_Personnage.AjouterChasseur("C1", "chef");
+        C1.RecevoirArme(epee);
+        C1.RecevoirArme(marteau);
+        
+        Personnage C2 = G_Personnage.AjouterChasseur("C2", "forgeron");
+        C2.RecevoirArme(marteau);
+
+        Personnage C3 = G_Personnage.AjouterChasseur("C3", "etudiant");
+        C3.RecevoirArme(stylo);
+    } //décrit dans l'énoncé
+
 	public static Troll AjouterTroll (string nom, int taille, int force){
         Troll t = G_Personnage.AjouterTroll(nom, taille, force);
         return t;
     }
+
     public static Chasseur AjouterChasseur (string nom, string fonction){
         Chasseur c = G_Personnage.AjouterChasseur(nom, fonction);
         return c;
     }
+
 	public static Arme CreerUneArme (int ida, string nom, int puiss){
         Arme a = G_Armes.CreerUneArme(ida, nom, puiss);
         return a;
     }
+
 	public static void DonnerUneArme (int ida, int idp){
-        G_Personnage.GetPersonnage(idp).RecevoirArme(G_Armes.GetArme(ida);
+        G_Personnage.GetPersonnage(idp).RecevoirArme(G_Armes.GetArme(ida));
     } //id de l'arme, id du personnage
+
 	public static void Frapper (int idpAgresseur, int idpVictime) {
         G_Personnage.GetPersonnage(idpAgresseur).Frapper(G_Personnage.GetPersonnage(idpVictime));
     }
+
 	public static void SupprimerPers (int idp){
         G_Personnage.SupprimerPers(idp);
     }
@@ -85,7 +111,7 @@ namespace packTrolls
         return G_Armes.GetArme(ida);
     } //arme d'identifiant idaa
 	public static IEnumerable<Arme> GetArmes(int idp){
-        return G_Personnage.GetPersonnage(idp).ListerMesArmes();
+        return G_Personnage.GetPersonnage(idp).GetListeArmes();
     } //liste des armes du personnage d'identifiant idp
 	
 	}
