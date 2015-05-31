@@ -90,6 +90,13 @@ namespace packTrolls
             }
             return ennemis;
         }
+		
+		public ICollection<Personnage> GetListeEnnemis() {
+			return new List<Personnage>(mesEnnemis);
+		}
+		
+		public void AjouterEnnemi(Personnage p) {
+			this.mesEnnemis.Add(p);
+		}
 	}
 }
-
