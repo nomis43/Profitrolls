@@ -17,7 +17,7 @@ namespace packTrolls.Tests
             "Troll.init : Identificateur négatif ne lance pas l'exception ArgumentOutOfRangeException")]
         public void TrollTest1()
         {
-            new Troll("T1", 100, 10);
+            new packTrolls.Troll(-1, "T1", 100, 10);
         }
 
         [TestMethod()]
@@ -25,7 +25,7 @@ namespace packTrolls.Tests
             "Troll.init : Nom null ne lance pas l'exception ArgumentOutOfRangeException")]
         public void TrollTest2()
         {
-            new Troll(null, 100, 10);
+            new Troll(1, null, 100, 10);
         }
 
         [TestMethod()]
@@ -33,7 +33,7 @@ namespace packTrolls.Tests
             "Troll.init : Nom vide ne lance pas l'exception ArgumentOutOfRangeException")]
         public void TrollTest3()
         {
-            new Troll("", 100, 10);
+            new Troll(1, "", 100, 10);
         }
 
         [TestMethod()]
@@ -41,7 +41,7 @@ namespace packTrolls.Tests
             "Troll.init : Taille négative ne lance pas l'exception ArgumentOutOfRangeException")]
         public void TrollTest4()
         {
-            new Troll("T1", -100, 10);
+            new Troll(1, "T1", -100, 10);
         }
 
         [TestMethod()]
@@ -49,20 +49,20 @@ namespace packTrolls.Tests
             "Troll.init : Force négative ne lance pas l'exception ArgumentOutOfRangeException")]
         public void TrollTest5()
         {
-            new Troll("T1", 100, -10);
+            new Troll(1, "T1", 100, -10);
         }
 
         [TestMethod()]
         public void GetIdpTest()
         {
-            Troll t1 = new Troll("T1", 100, 10);
+            Troll t1 = new Troll(1, "T1", 100, 10);
             Assert.AreEqual(1, t1.GetId(), "Troll.GetIdp : idp mal initialisée");
         }
 
         [TestMethod()]
         public void GetNomTest()
         {
-            Troll t1 = new Troll("T1", 100, 10);
+            Troll t1 = new Troll(1, "T1", 100, 10);
             Assert.AreEqual("T1", t1.GetNom(), "Troll.GetNom : nom mal initialisée");
         }
 
@@ -80,12 +80,14 @@ namespace packTrolls.Tests
             Assert.AreEqual(10, t1.GetForce(), "Troll.GetForce : Force mal initialisée");
         }
 
+        /*
         [TestMethod()]
         public void GetTypePersTest()
         {
             Troll t1 = new Troll(1, "T1", 100, 10);
             Assert.AreEqual(Troll.C_GetType(), t1.GetTypePers(), "Troll.GetTypePers : TypePers mal initialisé");
         }
+         */
 
         [TestMethod()]
         public void GetTailleTest()
@@ -99,7 +101,7 @@ namespace packTrolls.Tests
         {
             Troll t1 = new Troll(1, "T1", 100, force: 10);
             t1.RecevoirArme(new Arme(1, "test unitaire", 100));
-            Assert.AreEqual(10, t1.GetForce(), "Troll.RecevoirArme : Force modifiée");
+            Assert.AreEqual(10, t1.GetForce(), "Troll.RecevoirArme : Force non modifiée");
         }
 
         [TestMethod()]
@@ -121,7 +123,7 @@ namespace packTrolls.Tests
         public void MesEnnemisTest()
         {
             Troll t1 = new Troll(1, "T1", taille: 100, force: 10);
-            Assert.AreEqual(0, t1.GetMesEnnemis().Count(),
+            Assert.AreEqual(0, t1.GetListeEnnemis().Count(),
                 "Troll.MesEnnemis : MesEnnemis n'est pas vide initialement");
         }
     }
