@@ -60,7 +60,6 @@
 
 		public Personnage(int id, string nom, int vie)
 		{
-            this.id = id;
             if (id < 1)
             {
                 throw new ArgumentOutOfRangeException("ERREUR: L'id ne peut pas être inférieur à 1");

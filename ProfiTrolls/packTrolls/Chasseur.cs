@@ -68,7 +68,11 @@ namespace packTrolls
 
 		public Chasseur(int id, string nom, string fonction) : base(id, nom, Personnage.c_vieNaissance)
 		{
-            this.fonction = fonction;
+            if (String.IsNullOrWhiteSpace(fonction) || String.IsNullOrEmpty(fonction) || !Char.IsLetter(fonction[0]))
+            {
+                throw new ArgumentOutOfRangeException("ERREUR: Fonction invalide!");
+            }
+            else { this.fonction = fonction; }
 		}
 
 		public override int GetForce()

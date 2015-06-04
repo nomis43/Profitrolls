@@ -105,7 +105,7 @@ namespace packTrolls.Tests
         }
 
         [TestMethod()]
-        //        [Ignore]
+        [Ignore]
         public void PresentationCourteTest()
         {
             Assert.Inconclusive("Ce test est délicat à réaliser car le format exact n'a pas été fixé");
