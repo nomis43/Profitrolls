@@ -42,13 +42,21 @@ namespace ProfiTrolls
                   
                      case 2: 
                              Console.Write("id du personnage ? ");
-                             int idPers = LireEntier();     
-                             Console.WriteLine("{0,-4}{1,-4}{2,-10}{3,-6}{4,-6}{5,-16}{6,-8}",
-                                               "id", "nom", "type", "force", "vie",
-                                               "taille/fctn", "nbarmes");
-                             Console.Write("========================================");
-                             Console.WriteLine("==========================");
-                             Console.WriteLine(Facade.AfficherPersonnageDD(idPers));
+                             int idPers = LireEntier();
+                             try
+                             {
+                                 Console.WriteLine("{0,-4}{1,-4}{2,-10}{3,-6}{4,-6}{5,-16}{6,-8}",
+                                                   "id", "nom", "type", "force", "vie",
+                                                   "taille/fctn", "nbarmes");
+                                 Console.Write("========================================");
+                                 Console.WriteLine("==========================");
+                                 Console.WriteLine(Facade.AfficherPersonnageDD(idPers));
+                             }
+                             catch (ArgumentOutOfRangeException a)
+                             {
+                                 Console.WriteLine(a.Message);
+                                 throw;
+                             }
                              break;
                            
                      case 3: // Lister ts les personnages (desc détaillée)
@@ -91,7 +99,14 @@ namespace ProfiTrolls
                          string nom = Console.ReadLine();
                          Console.Write("Puissance ? ");
                          int puissance =  LireEntier();
-                         Facade.CreerUneArme(idA, nom, puissance);
+                         try
+                         {
+                             Facade.CreerUneArme(idA, nom, puissance);
+                         }
+                         catch (ArgumentOutOfRangeException a)
+                         {
+                             Console.WriteLine(a.Message);
+                         }
                          break;
 							
                     case 7: //Lister les armes disponibles 
