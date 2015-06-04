@@ -21,9 +21,22 @@ namespace packTrolls
 
 		public Arme(int id, string nom, int puissance)
 		{
-            this.id = id;
-            this.nom = nom;
-            this.puissance = puissance;
+            if (id<0)
+            {
+                throw new ArgumentOutOfRangeException("ERREUR : ID négatif");
+            }
+            else this.id = id;
+
+            if (String.IsNullOrWhiteSpace(nom) || String.IsNullOrEmpty(nom) || !Char.IsLetter(nom[0]))
+            {
+                throw new ArgumentOutOfRangeException("ERREUR : Nom vide");
+            }
+            else this.nom = nom;
+
+            if(puissance<0)
+            {
+                throw new ArgumentOutOfRangeException("ERREUR: Puissance négative");
+            }else this.puissance = puissance;
 
 		}
 

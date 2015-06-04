@@ -17,7 +17,7 @@ namespace packTrolls.Tests
             "Troll.init : Identificateur négatif ne lance pas l'exception ArgumentOutOfRangeException")]
         public void TrollTest1()
         {
-            new packTrolls.Troll(-1, "T1", 100, 10);
+            new Troll(-1, "T1", 100, 10);
         }
 
         [TestMethod()]
