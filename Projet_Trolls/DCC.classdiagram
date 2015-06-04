@@ -3765,6 +3765,19 @@
                     </operationHasOwnedParameters>
                   </ownedParameters>
                 </operation>
+                <operation Id="7114e49b-1ce9-4424-b778-6fed47ee98a4" name="AjouterMage" isLeaf="false" isStatic="false" isAbstract="false" concurrency="Sequential" isQuery="false">
+                  <elementDefinition Id="3eda2d7d-bea6-4393-a04b-2de473800b5b" />
+                  <ownedParameters>
+                    <operationHasOwnedParameters>
+                      <parameter Id="78c32900-e583-4a04-84d4-754db2b4163b" name="nom" direction="In" isUnique="false">
+                        <elementDefinition Id="830570d9-dbe7-4285-9056-0c45a5d6246d" />
+                        <type_NamedElement>
+                          <referencedTypeMoniker Id="fb027dfd-67e3-4183-80f7-acec1f7171a1" LastKnownName="string" />
+                        </type_NamedElement>
+                      </parameter>
+                    </operationHasOwnedParameters>
+                  </ownedParameters>
+                </operation>
               </ownedOperationsInternal>
             </class>
           </packageHasNamedElement>

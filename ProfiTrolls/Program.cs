@@ -98,7 +98,7 @@ namespace ProfiTrolls
                          Console.WriteLine("Liste des armes disponibles :");
                          
                          foreach (string a in Facade.AfficherArmesDisponibles()  )
-                             {Console.WriteLine(a);}
+                         { Console.WriteLine(a); Console.WriteLine("-------------------------------"); }
                          break;
 
                     case 8 : //Donner une arme à un personnage 
@@ -127,6 +127,13 @@ namespace ProfiTrolls
                             break;
                     default: Console.WriteLine("Erreur choix !");
                             break;   
+                
+                    case 12: // Créer un mage
+                         Console.Write("Nom du mage? ");
+                         string nomm = Console.ReadLine();
+                         Mage m = Facade.AjouterMage(nomm);
+                         Console.WriteLine("Creation du mage:\n {0}", m.PresentationCourte());
+                         break;
                   
                 }
 
@@ -162,7 +169,8 @@ namespace ProfiTrolls
             Console.WriteLine("9.  Frapper");
             Console.WriteLine("10. Supprimer un personnage");
             Console.WriteLine("11. Quitter le jeu");
-            Console.Write("Choix ? (0..11) ");
+            Console.WriteLine("12. Ajouter un mage");
+            Console.Write("Choix ? (0..12) ");
 
         }
     }

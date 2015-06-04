@@ -3,28 +3,28 @@ namespace packTrolls
 	using System;
 	using System.Collections.Generic;
 	
-	public class Magicien : Personnage
+	public class Mage : Personnage
 	{
 		private static string c_type = "Magicien";
 		private static int c_force = 5;
 		private List<Arme> mesArmes = new List<Arme>();
 		
 		
-		public Magicien(string nom, int id) : base(nom, Personnage.c_vieNaissance, id) { }
+		public Mage(int id, string nom) : base(id, nom, Personnage.c_vieNaissance) { }
 		
 		public override string GetTypePers()
 		{
-            return Magicien.c_type;
+            return Mage.c_type;
 		}
 		
 		public override int GetForce()
 		{
-            int forceTot = Magicien.c_force;
+            int forceTot = Mage.c_force;
             foreach (Arme a in mesArmes)
             {
-                forceTot += a.GetPuissance();
+                forceTot += a.GetPuissance() / 2;
             }
-            return forceTot / 2;
+            return forceTot;
 		}
 		
 		public override IEnumerable<Arme> GetListeArmes()
@@ -34,17 +34,17 @@ namespace packTrolls
 		
 		public override void SetTypePers(string type)
 		{
-            Magicien.c_type = type;
+            Mage.c_type = type;
 		}
 		
 		public static void c_SetForce(int force)
 		{
-            Magicien.c_force = force;
+            Mage.c_force = force;
 		}
 		
 		public override string PresentationCourte()
 		{
-            return string.Format(base.PresentationCourte() + "{0,-10}{1,-6}{2,-6}{3,-16}{3,-8}", Magicien.c_type, this.GetForce(), this.GetVie(), "", this.mesArmes.Count);
+            return string.Format(base.PresentationCourte() + "{0,-10}{1,-6}{2,-6}{3,-16}{3,-8}", Mage.c_type, this.GetForce(), this.GetVie(), "", this.mesArmes.Count);
 		}
 
 		public override string PresentationDetail()

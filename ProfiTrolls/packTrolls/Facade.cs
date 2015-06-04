@@ -25,6 +25,8 @@ namespace packTrolls
         Arme epee = G_Armes.CreerUneArme(1, "Epée", 20);
         Arme marteau = G_Armes.CreerUneArme(2, "marteau", 10);
         Arme stylo = G_Armes.CreerUneArme(4, "stylo", 2);
+        Arme aura = G_Armes.CreerUneArme(5, "aura", 0);
+        Arme mutant = G_Armes.CreerUneArme(6,"mutant", 0);
 
         Personnage T1 = G_Personnage.AjouterTroll("T1", 280, 20);
         Personnage T2 = G_Personnage.AjouterTroll("T2", 220, 40);
@@ -39,6 +41,10 @@ namespace packTrolls
 
         Personnage C3 = G_Personnage.AjouterChasseur("C3", "etudiant");
         C3.RecevoirArme(stylo);
+
+        Personnage M1 = G_Personnage.AjouterMage("M1");
+        M1.RecevoirArme(aura);
+        M1.RecevoirArme(mutant);
     } //décrit dans l'énoncé
 
 	public static Troll AjouterTroll (string nom, int taille, int force){
@@ -49,6 +55,11 @@ namespace packTrolls
     public static Chasseur AjouterChasseur (string nom, string fonction){
         Chasseur c = G_Personnage.AjouterChasseur(nom, fonction);
         return c;
+    }
+
+    public static Mage AjouterMage(string nom)
+    {
+        return G_Personnage.AjouterMage(nom);
     }
 
 	public static Arme CreerUneArme (int ida, string nom, int puiss){
@@ -71,7 +82,7 @@ namespace packTrolls
 	public static IEnumerable<string> AfficherArmesDisponibles() {
         List<string> nomArmes = new List<string>();
         foreach (Arme a in G_Armes.ListerTtesArmes()) {
-            nomArmes.Add(a.GetNom());
+            nomArmes.Add(String.Format("{0,-2} | {1}", a.GetId(), a.GetNom()));
         }
         return nomArmes;
     } //toutes les armes créées

@@ -45,10 +45,20 @@ namespace packTrolls
             return c_type;
 		}
 
-		public Troll(string nom, int taille, int force, int id) : base(nom, Personnage.c_vieNaissance, id)
+		public Troll(int id, string nom, int taille, int force) : base(id, nom, Personnage.c_vieNaissance)
 		{
-            this.taille = taille;
-            this.force = force;
+            if (taille < 0)
+            {
+                throw new ArgumentOutOfRangeException("La taille d'un Troll ne peux pas être < 0");
+            }
+            else this.taille = taille;
+
+            if (force < 0)
+            {
+                throw new ArgumentOutOfRangeException("La force d'un Troll ne peux pas être < 0");
+                
+            }
+            else this.force = force;
 		}
 
 		public override int GetForce()

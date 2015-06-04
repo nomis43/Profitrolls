@@ -4961,6 +4961,31 @@
               </operationHasOwnedParameters>
             </ownedParameters>
           </operation>
+          <operation
+            Id="3eda2d7d-bea6-4393-a04b-2de473800b5b"
+            name="AjouterMage"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="830570d9-dbe7-4285-9056-0c45a5d6246d"
+                  name="nom"
+                  direction="In"
+                  isUnique="false">
+                  <type_NamedElement>
+                    <undefinedTypeMoniker
+                      Id="a673633c-8995-4279-a8bc-1252d7ba6e5c"
+                      LastKnownName="string"
+                      LastKnownLocation="Package_1113.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
         </ownedOperationsInternal>
       </class>
     </packageHasNamedElement>

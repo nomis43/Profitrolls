@@ -50,6 +50,7 @@
     <Compile Include="packTrolls\Chasseur.cs" />
     <Compile Include="packTrolls\G_Armes.cs" />
     <Compile Include="packTrolls\G_Personnage.cs" />
+    <Compile Include="packTrolls\Mage.cs" />
     <Compile Include="packTrolls\Personnage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

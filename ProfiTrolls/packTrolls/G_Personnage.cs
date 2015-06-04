@@ -49,7 +49,7 @@ namespace packTrolls
 
 		public static Troll AjouterTroll(string nom, int taille, int force)
 		{
-            Troll troll = new Troll(nom, taille, force, nextId);
+            Troll troll = new Troll(nextId, nom, taille, force);
             ListePersonnages.Add(troll);
             nextId++;
 
@@ -59,12 +59,21 @@ namespace packTrolls
 
 		public static Chasseur AjouterChasseur(string nom, string fonction)
 		{
-            Chasseur chasseur = new Chasseur(nom, fonction, nextId);
+            Chasseur chasseur = new Chasseur(nextId, nom, fonction);
             ListePersonnages.Add(chasseur);
             nextId++;
 
             return chasseur;
 		}
+
+        public static Mage AjouterMage(string nom)
+        {
+            Mage mage = new Mage(nextId, nom);
+            ListePersonnages.Add(mage);
+            nextId++;
+
+            return mage;
+        }
 
 	}
 }
