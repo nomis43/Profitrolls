@@ -68,6 +68,7 @@ namespace packTrolls
     }
 
 	public static void DonnerUneArme (int ida, int idp){
+        
         G_Personnage.GetPersonnage(idp).RecevoirArme(G_Armes.GetArme(ida));
     } //id de l'arme, id du personnage
 
