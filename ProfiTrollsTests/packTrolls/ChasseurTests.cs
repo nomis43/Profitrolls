@@ -11,16 +11,28 @@ namespace packTrolls.Tests
     public class ChasseurTests
     {
         [TestMethod()]
-        public void RecevoirArmeTest()
+        public void RecevoirArmeTest1()
         {
             Arme a = G_Armes.CreerUneArme(1, "epee", 35);
             Chasseur c = G_Personnage.AjouterChasseur("C1", "forgeron");
             c.RecevoirArme(a);
             List<Arme> lArmes = (List<Arme>) c.GetListeArmes();
-            Assert.AreEqual(lArmes[0], a);
+            CollectionAssert.Contains(lArmes, a);
+        }
+
+        [TestMethod]
+        public void RecevoirArmeTest2()
+        {
+            Arme a = G_Armes.CreerUneArme(1, "epee", 35);
+            Chasseur c = G_Personnage.AjouterChasseur("C1", "forgeron");
+            c.RecevoirArme(a);
+            c.RecevoirArme(a);
+            List<Arme> lArmes = (List<Arme>) c.GetListeArmes();
+            CollectionAssert.AllItemsAreUnique(lArmes);
         }
 
         [TestMethod()]
+        [Ignore]
         public void PresentationCourteTest()
         {
             Assert.Fail();
@@ -29,55 +41,101 @@ namespace packTrolls.Tests
         [TestMethod()]
         public void PresentationDetailTest()
         {
-            Assert.Fail();
+            Chasseur c1 = new Chasseur(1, "C1", "forgeron");
+            StringAssert.StartsWith(c1.PresentationDetail(), c1.PresentationCourte(),
+                "Chasseur.PresentationDetail : ne commence pas présentation courte");
         }
 
         [TestMethod()]
         public void GetListeArmesTest()
         {
-            Assert.Fail();
+            Chasseur c = G_Personnage.AjouterChasseur("C1", "forgeron");
+            List<Arme> lArmes = (List<Arme>) c.GetListeArmes();
+            Assert.IsNotNull(lArmes);
         }
 
         [TestMethod()]
+        [Ignore]
         public void ListerMesArmesTest()
-        {
-            Assert.Fail();
+        {  
+            Assert.Inconclusive();
         }
 
         [TestMethod()]
-        public void GetTypePersTest1()
+        public void GetTypePersTest()
         {
-            Assert.Fail();
+            Chasseur c1 = new Chasseur(1, "C1", "facteur");
+            Assert.AreEqual(c1.GetTypePers(), "Chasseur");
         }
 
         [TestMethod()]
-        public void ChasseurTest()
+        [ExpectedException(typeof(ArgumentOutOfRangeException),
+            "Chasseur.init : Identificateur négatif ne lance pas l'exception ArgumentOutOfRangeException")]
+        public void ChasseurTest1()
         {
-            Assert.Fail();
+            new Chasseur(-1, "C1", "facteur");
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentOutOfRangeException),
+            "Chasseur.init : Nom null ne lance pas l'exception ArgumentOutOfRangeException")]
+        public void ChasseurTest2()
+        {
+            new Chasseur(1, null, "facteur");
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentOutOfRangeException),
+            "Chasseur.init : Nom vide ne lance pas l'exception ArgumentOutOfRangeException")]
+        public void ChasseurTest3()
+        {
+            new Chasseur(1, "", "facteur");
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentOutOfRangeException),
+            "Chasseur.init : Fonction null ne lance pas l'exception ArgumentOutOfRangeException")]
+        public void ChasseurTest4()
+        {
+            new Chasseur(1, "C1", null);
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(ArgumentOutOfRangeException),
+            "Chasseur.init : Fonction vide ne lance pas l'exception ArgumentOutOfRangeException")]
+        public void ChasseurTest5()
+        {
+            new Chasseur(1, "C1", "");
         }
 
         [TestMethod()]
         public void GetForceTest()
         {
-            Assert.Fail();
+            Chasseur c1 = new Chasseur(1, "C1", "facteur");
+            Assert.AreEqual(20, c1.GetForce());
         }
 
         [TestMethod()]
         public void SetTypePersTest()
         {
-            Assert.Fail();
+            Chasseur c1 = new Chasseur(1, "C1", "facteur");
+            c1.SetTypePers("Seigneur");
+            Assert.AreEqual("Seigneur", c1.GetTypePers());
         }
 
         [TestMethod()]
         public void GetFonctionTest()
         {
-            Assert.Fail();
+            Chasseur c1 = new Chasseur(1, "C1", "facteur");
+            Assert.AreEqual("facteur", c1.GetFonction());
         }
 
         [TestMethod()]
         public void c_SetForceTest()
         {
-            Assert.Fail();
+            Chasseur c1 = new Chasseur(1, "C1", "facteur");
+            Chasseur.c_SetForce(54);
+            Assert.AreEqual(54, c1.GetForce());
         }
     }
 }

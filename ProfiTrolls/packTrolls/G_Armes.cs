@@ -17,6 +17,17 @@ namespace packTrolls
         
 		public static Arme CreerUneArme(int id, string nom, int puissance)
 		{
+            foreach (Arme a in ListeArmes)
+            {
+                if (a.GetId() == id)
+                {
+                    throw new ArgumentOutOfRangeException("ERREUR: Impossible de créer deux armes avec le même id!");
+                }
+                if (a.GetNom() == nom)
+                {
+                    throw new ArgumentOutOfRangeException("ERREUR: Impossible de créer deux armes avec le même nom!");
+                }
+            }
             Arme nouvelleArme = new Arme(id, nom, puissance);
             G_Armes.ListeArmes.Add(nouvelleArme);
             return nouvelleArme;

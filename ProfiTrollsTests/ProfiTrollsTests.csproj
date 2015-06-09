@@ -50,14 +50,13 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="packTrolls\ArmeTests.cs" />
-    <Compile Include="packTrolls\FacadeTests.cs" />
+    <Compile Include="packTrolls\ChasseurTests.cs" />
     <Compile Include="packTrolls\TrollTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProfiTrolls\ProfiTrolls.csproj">
-      <Project>{29EDEFE2-687C-4569-9D3A-D13791397F20}</Project>
+      <Project>{29edefe2-687c-4569-9d3a-d13791397f20}</Project>
       <Name>ProfiTrolls</Name>
     </ProjectReference>
   </ItemGroup>
