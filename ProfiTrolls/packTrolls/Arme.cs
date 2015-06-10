@@ -21,7 +21,7 @@ namespace packTrolls
 
 		public Arme(int id, string nom, int puissance)
 		{
-            if (id<0)
+            if (id<=0)
             {
                 throw new ArgumentOutOfRangeException("ERREUR : ID négatif");
             }
