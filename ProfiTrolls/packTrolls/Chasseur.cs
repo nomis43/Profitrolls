@@ -21,6 +21,10 @@ namespace packTrolls
 
         private List<Arme> mesArmes = new List<Arme>();
 
+        /// <summary>
+        /// Permet à un chasseur de reçevoir une arme si elle n'est pas déjà équipée par celui-ci
+        /// </summary>
+        /// <param name="a">Arme</param>
 		public override void RecevoirArme(Arme a)
 		{
             bool existe = false;
@@ -52,6 +56,7 @@ namespace packTrolls
             return new List<Arme> (this.mesArmes);
 		}
 
+        // Fonction utilisée par PresentationDetail. Renvoie une chaine de caractères avec le nom de toutes les armes du chasseur
         public override string ListerMesArmes() {
             string armes = "";
             foreach (Arme a in mesArmes)

@@ -25,7 +25,6 @@ namespace packTrolls
 
 		public override string PresentationDetail()
 		{
-            //return this.PresentationCourte() + "ennemis : " + this.GetEnnemis();
             return base.PresentationDetail();
 		}
 

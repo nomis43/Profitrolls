@@ -13,6 +13,7 @@ namespace packTrolls.Tests
         [TestMethod()]
         public void RecevoirArmeTest1()
         {
+            G_Armes.Reset();
             Arme a = G_Armes.CreerUneArme(1, "epee", 35);
             Chasseur c = G_Personnage.AjouterChasseur("C1", "forgeron");
             c.RecevoirArme(a);
@@ -23,6 +24,7 @@ namespace packTrolls.Tests
         [TestMethod]
         public void RecevoirArmeTest2()
         {
+            G_Armes.Reset();
             Arme a = G_Armes.CreerUneArme(1, "epee", 35);
             Chasseur c = G_Personnage.AjouterChasseur("C1", "forgeron");
             c.RecevoirArme(a);

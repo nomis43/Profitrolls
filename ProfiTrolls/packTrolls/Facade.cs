@@ -18,15 +18,18 @@ namespace packTrolls
 	public class Facade
 	{
     //actions
-	public static void InitialiserJeuVide(){}
+	public static void InitialiserJeuVide() {
+        G_Personnage.Reset();
+        G_Armes.Reset();
+    }
 
 	public static void CreerJeuDEssai(){
 
         Arme epee = G_Armes.CreerUneArme(1, "Epée", 20);
         Arme marteau = G_Armes.CreerUneArme(2, "marteau", 10);
-        Arme stylo = G_Armes.CreerUneArme(4, "stylo", 2);
-        Arme aura = G_Armes.CreerUneArme(5, "aura", 0);
-        Arme mutant = G_Armes.CreerUneArme(6,"mutant", 0);
+        Arme stylo = G_Armes.CreerUneArme(3, "stylo", 2);
+        // Arme aura = G_Armes.CreerUneArme(5, "aura", 0);
+        // Arme mutant = G_Armes.CreerUneArme(6,"mutant", 0);
 
         Personnage T1 = G_Personnage.AjouterTroll("T1", 280, 20);
         Personnage T2 = G_Personnage.AjouterTroll("T2", 220, 40);
@@ -42,9 +45,9 @@ namespace packTrolls
         Personnage C3 = G_Personnage.AjouterChasseur("C3", "etudiant");
         C3.RecevoirArme(stylo);
 
-        Personnage M1 = G_Personnage.AjouterMage("M1");
-        M1.RecevoirArme(aura);
-        M1.RecevoirArme(mutant);
+        // Personnage M1 = G_Personnage.AjouterMage("M1");
+        // M1.RecevoirArme(aura);
+        // M1.RecevoirArme(mutant);
     } //décrit dans l'énoncé
 
 	public static Troll AjouterTroll (string nom, int taille, int force){

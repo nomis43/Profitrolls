@@ -13,8 +13,15 @@ namespace packTrolls
 
 	public class G_Armes
 	{
-        public static List<Arme> ListeArmes = new List<Arme>();
+        public static List<Arme> ListeArmes = new List<Arme>(); // Liste contenant toutes les armes créées dans le jeu
         
+        /// <summary>
+        /// Crée une arme et l'ajoute à ListeArmes
+        /// </summary>
+        /// <param name="id">ID de l'arme</param>
+        /// <param name="nom">Nom de l'arme</param>
+        /// <param name="puissance">Puissance de l'arme</param>
+        /// <returns></returns>
 		public static Arme CreerUneArme(int id, string nom, int puissance)
 		{
             foreach (Arme a in ListeArmes)
@@ -33,6 +40,11 @@ namespace packTrolls
             return nouvelleArme;
 		}
 
+        /// <summary>
+        /// Cherche une arme dans ListArmes et la renvoie
+        /// </summary>
+        /// <param name="id">ID arme</param>
+        /// <returns></returns>
         public static Arme GetArme(int id)
         {
             foreach (Arme a in ListeArmes)
@@ -49,6 +61,14 @@ namespace packTrolls
 		{
             return ListeArmes;
 		}
+
+        /// <summary>
+        /// Fonction executée pour réinitialiser G_Armes
+        /// </summary>
+        public static void Reset()
+        {
+            ListeArmes.Clear();
+        }
 
 	}
 }

@@ -140,46 +140,103 @@ namespace packTrolls.Tests
         }
 
         [TestMethod()]
-        public void SupprimerPersTest()
+        [ExpectedException(typeof(ArgumentOutOfRangeException),
+            "Facade.init : Identifiant du personnage négatif ne lance pas l'exception ArgumentOutOfRangeException")]
+        public void SupprimerPersTest1()
         {
-            Assert.Fail();
+            Facade.SupprimerPers(-1);
         }
 
         [TestMethod()]
-        public void AfficherArmesDisponiblesTest()
+        [ExpectedException(typeof(ArgumentOutOfRangeException),
+            "Facade.init : Identifiant du personnage nul ne lance pas l'exception ArgumentOutOfRangeException")]
+        public void SupprimerPersTest2()
         {
-            Assert.Fail();
+            Facade.SupprimerPers(0);
         }
 
         [TestMethod()]
-        public void AfficherPersonnageDCTest()
+        [ExpectedException(typeof(ArgumentOutOfRangeException),
+            "Facade.init : Identifiant du personnage inexistant ne lance pas l'exception ArgumentOutOfRangeException")]
+        public void SupprimerPersTest3()
         {
-            Assert.Fail();
+            Facade.SupprimerPers(1);
         }
 
-        [TestMethod()]
-        public void AfficherPersonnageDDTest()
+        public void SupprimerPersTest4()
         {
-            Assert.Fail();
+            Personnage C1 = G_Personnage.AjouterChasseur("C1", "Barde");
+            Personnage C2 = G_Personnage.AjouterChasseur("C2", "Clown");
+
+            Facade.SupprimerPers(1);
+            List<Personnage> lp = (List<Personnage>) G_Personnage.ListerTsPersonnages();
+            CollectionAssert.DoesNotContain(lp, C1);
+            CollectionAssert.Contains(lp, C2);
+            Facade.SupprimerPers(2);
+            if (!lp.Any())
+            {
+                Assert.Fail();
+            }
         }
 
-        [TestMethod()]
-        public void AfficherTsPersonnagesDCTest()
+        public void SupprmierPersTest6()
         {
-            Assert.Fail();
+            Personnage C1 = G_Personnage.AjouterChasseur("C1", "Barde");
+            Personnage C2 = G_Personnage.AjouterChasseur("C2", "Clown");
+
+            C1.Frapper(C2);
+
+            G_Personnage.SupprimerPers(1);
+            List<Personnage> listeEnnemis = (List<Personnage>)C2.GetListeEnnemis();
+            CollectionAssert.DoesNotContain(listeEnnemis, C1);
         }
 
-        [TestMethod()]
-        public void AfficherTsPersonnagesDDTest()
+        public void SupprmierPersTest5()
         {
-            Assert.Fail();
+            G_Personnage.AjouterChasseur("C1", "Barde");
+            Facade.SupprimerPers(1);
+            List<Personnage> lp = (List<Personnage>) G_Personnage.ListerTsPersonnages();
+            if (!lp.Any())
+            {
+                Assert.Fail();
+            }
         }
 
         [TestMethod()]
         public void ListerTsPersonnagesTest()
         {
-            Assert.Fail();
+            G_Personnage.Reset();
+            Personnage C1 = G_Personnage.AjouterChasseur("C1", "F1");
+            Personnage C2 = G_Personnage.AjouterChasseur("C2", "F2");
+
+            List<Personnage> lp = (List<Personnage>) G_Personnage.ListerTsPersonnages();
+
+            if (lp.Count != 2)
+            {
+                Assert.Fail();
+            }
+            CollectionAssert.Contains(lp, C1);
+            CollectionAssert.Contains(lp, C2);
         }
+
+        public void ListerTsPersonnagesTest2() {
+            if (G_Personnage.ListerTsPersonnages().Count() != 0)
+            {
+                Assert.Fail();
+            }
+        }
+
+        public void ListerTsPersonnagesTest3()
+        {
+            Personnage C1 = G_Personnage.AjouterChasseur("C1", "F1");
+            List<Personnage> lp = (List<Personnage>) G_Personnage.ListerTsPersonnages();
+            if (lp.Count != 1)
+            {
+                Assert.Fail();
+            }
+            CollectionAssert.Contains(lp, C1);
+        }
+
 
         [TestMethod()]
         public void GetPersonnageTest()

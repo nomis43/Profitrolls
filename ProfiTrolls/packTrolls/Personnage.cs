@@ -87,6 +87,11 @@
 		{
             this.AjouterEnnemi(agresseur);
             this.vie -= force;
+            if (this.vie < 0)
+            {
+                this.vie = 0;
+                agresseur.SupprimerEnnemi(this);
+            }
 		}
 
         public string GetEnnemis()
@@ -115,5 +120,13 @@
 			    this.mesEnnemis.Add(p);
             }
 		}
+
+        public void SupprimerEnnemi(Personnage p)
+        {
+            if (this.mesEnnemis.Contains(p))
+            {
+                this.mesEnnemis.Remove(p);
+            }
+        }
 	}
 }

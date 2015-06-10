@@ -149,6 +149,18 @@ namespace ProfiTrolls
                          Mage m = Facade.AjouterMage(nomm);
                          Console.WriteLine("Creation du mage:\n {0}", m.PresentationCourte());
                          break;
+
+                    case 13:
+                         Test1();
+                         break;
+
+                    case 14:
+                         Test2();
+                         break;
+
+                    case 15:
+                         Test3();
+                         break;
                   
                 }
 
@@ -185,8 +197,117 @@ namespace ProfiTrolls
             Console.WriteLine("10. Supprimer un personnage");
             Console.WriteLine("11. Quitter le jeu");
             Console.WriteLine("12. Ajouter un mage");
+            Console.WriteLine("13. Test1");
+            Console.WriteLine("14. Test2");
+            Console.WriteLine("15. Test3");
             Console.Write("Choix ? (0..12) ");
+        }
 
+        static void Test1()
+        {
+            Facade.InitialiserJeuVide();
+            Facade.CreerJeuDEssai();
+            Console.WriteLine("=================================");
+            foreach (string p in Facade.AfficherTsPersonnagesDC()) { Console.WriteLine(p); }
+            Facade.Frapper(4, 1);
+            Facade.Frapper(6, 3);
+            Facade.Frapper(3, 6);
+            Console.WriteLine("=================================");
+            foreach (string p in Facade.AfficherTsPersonnagesDC()) { Console.WriteLine(p); }
+            Console.WriteLine("=================================");
+            Console.WriteLine(Facade.AfficherPersonnageDD(6));
+        }
+
+        static void Test2()
+        {
+            Console.WriteLine("============Test2  : Jeu de tests plus poussé : création et distribution d'armes (y compris à un troll), combats =====================");
+            Facade.InitialiserJeuVide();
+            Facade.CreerJeuDEssai();
+            Facade.AjouterTroll("T4", 314, 99); //idP=7
+            Facade.AjouterChasseur("C4", "guetteur");//idP=8
+            Console.WriteLine("============Ajout T4 et C4 =====================");
+            foreach (string p in Facade.AfficherTsPersonnagesDC()) { Console.WriteLine(p); }
+
+            //nouvelle arme et distribution des armes
+            Facade.CreerUneArme(4, "laser", 50);
+            Facade.DonnerUneArme(3, 4);
+            Facade.DonnerUneArme(1, 8);
+            Facade.DonnerUneArme(4, 8);
+            Facade.DonnerUneArme(4, 8);// 2 fois la meme arme, il ne la prend pas.
+            Facade.DonnerUneArme(4, 4);
+
+            Console.WriteLine("====== nb armes et force augmentés pour C1 et C4 =======");
+            foreach (string p in Facade.AfficherTsPersonnagesDC()) { Console.WriteLine(p); }
+            Console.WriteLine("---------------------------------");
+            Console.WriteLine(Facade.AfficherPersonnageDD(4));
+            Console.WriteLine(Facade.AfficherPersonnageDD(8));
+            Console.WriteLine(Facade.AfficherPersonnageDD(1));
+            Console.WriteLine("------------C4 n'a pas 2 fois laser ? --------------");
+            Facade.DonnerUneArme(4, 1);
+            Console.WriteLine(Facade.AfficherPersonnageDD(1));
+            Console.WriteLine("============= T1 n'a pas plus de force ? =============");
+            //combats
+
+            Facade.Frapper(4, 7);
+            Facade.Frapper(7, 4);
+            Facade.Frapper(8, 4);
+
+            Facade.Frapper(1, 8);
+            Facade.Frapper(2, 8);
+            Facade.Frapper(6, 8);
+            Facade.Frapper(6, 8);//2 fois la meme frappe => une seule fois l'ennemi ?
+
+            Console.WriteLine("=================================");
+            foreach (string p in Facade.AfficherTsPersonnagesDC()) { Console.WriteLine(p); }
+            Console.WriteLine("---------------------------------");
+            Console.WriteLine(Facade.AfficherPersonnageDD(4));
+            Console.WriteLine(Facade.AfficherPersonnageDD(7));
+            Console.WriteLine(Facade.AfficherPersonnageDD(8));
+            Console.WriteLine("======= une seule fois l'ennemi C3 ? ==========");
+        }
+
+        static void Test3()
+        {
+            Console.WriteLine("===========Test3  : Jeu de tests avec suppression et ajout de personnages ======================");
+            Facade.InitialiserJeuVide();
+            Facade.CreerJeuDEssai();
+            Console.WriteLine("===========suppression de T1 et C3 ; ajout de T4 et C4 ======================");
+            Facade.SupprimerPers(1);
+            Facade.SupprimerPers(6);
+            Facade.AjouterTroll("T4", 314, 99); //idP=7
+            Facade.AjouterChasseur("C4", "guetteur");//idP=8
+            Console.WriteLine("=================================");
+            foreach (string p in Facade.AfficherTsPersonnagesDC()) { Console.WriteLine(p); }
+            Console.WriteLine("---------------------------------");
+            Console.WriteLine("========= armes et combats ======================");
+            Facade.DonnerUneArme(1, 5);
+            Facade.DonnerUneArme(3, 8);
+            Facade.DonnerUneArme(3, 8);//il l'a déjà !
+            Facade.Frapper(5, 7);
+            Facade.Frapper(5, 8);
+            Facade.Frapper(5, 3);
+            Facade.Frapper(2, 7);
+            Facade.Frapper(2, 8);
+            Facade.Frapper(7, 2);
+
+            foreach (string p in Facade.AfficherTsPersonnagesDD()) { Console.WriteLine(p); }
+            Console.WriteLine("=========suppression de C2==========");
+            Facade.SupprimerPers(5); //suppression de C2
+            foreach (string p in Facade.AfficherTsPersonnagesDD()) { Console.WriteLine(p); }
+            Console.WriteLine("========= C2 supprimé aussi des ennemis ? ==========");
+            Console.WriteLine("========T2 puis C4 frappés à mort ============");
+            Facade.Frapper(7, 2);
+            Facade.Frapper(8, 2);
+            Facade.Frapper(4, 8);
+            Facade.Frapper(3, 8);
+            foreach (string p in Facade.AfficherTsPersonnagesDD()) { Console.WriteLine(p); }
+            Console.WriteLine("=================================");
+            Console.WriteLine("======= Qq essais sur les morts========");
+
+            Facade.DonnerUneArme(3, 8); // donner une arme à un mort
+            Facade.Frapper(7, 2); // frapper un mort
+            Facade.Frapper(2, 7); // demander à un mort de frapper !
+            foreach (string p in Facade.AfficherTsPersonnagesDD()) { Console.WriteLine(p); }
         }
     }
 }

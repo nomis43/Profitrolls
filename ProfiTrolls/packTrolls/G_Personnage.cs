@@ -17,6 +17,7 @@ namespace packTrolls
 
         private static List<Personnage> ListePersonnages = new List<Personnage>();
 		
+        // renvoie un personnage créé en fonction de son id
 		public static Personnage GetPersonnage(int id)
 		{
 			foreach (Personnage pers in G_Personnage.ListePersonnages)
@@ -36,15 +37,29 @@ namespace packTrolls
 
 		public static void SupprimerPers(int id)
 		{
-			foreach(Personnage pers in ListePersonnages)
+            bool trouve = false;
+            Personnage p;
+            if (id >= 0)
             {
-                if(pers.GetId()==id)
+                foreach (Personnage pers in ListePersonnages)
                 {
-                    ListePersonnages.Remove(pers);
-                    break;
+                    if (pers.GetId() == id)
+                    {
+                        trouve = true;
+                        for (int i = 0; i < ListePersonnages.Count; i++)
+                        {
+                            ListePersonnages[i].SupprimerEnnemi(pers);
+                        }
+                        ListePersonnages.Remove(pers);
+                        break;
+                    }
+                }
+                if (trouve == false)
+                {
+                    throw new ArgumentOutOfRangeException("Le personnage n'existe pas!");
                 }
             }
-            throw new ArgumentOutOfRangeException("le personnage n'existe pas");
+            throw new ArgumentOutOfRangeException("Id invalide");
 		}
 
 		public static Troll AjouterTroll(string nom, int taille, int force)
@@ -73,6 +88,13 @@ namespace packTrolls
             nextId++;
 
             return mage;
+        }
+
+        // Function permettant de réinitialiser G_Personnage.
+        public static void Reset()
+        {
+            ListePersonnages.Clear();
+            nextId = 1;
         }
 
 	}
